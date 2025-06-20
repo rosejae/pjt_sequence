@@ -64,10 +64,10 @@ def train_model(train_descriptions, train_features, wordtoix, max_length, vocab_
         
         output_signature = (
             (
-                tf.TensorSpec(shape=(None, INCEPTION_VEC), dtype=tf.float32),       # X1: image features
-                tf.TensorSpec(shape=(None, max_length), dtype=tf.int32)    # X2: input sequence
+                tf.TensorSpec(shape=(None, INCEPTION_VEC), dtype=tf.float32), # X1: image features
+                tf.TensorSpec(shape=(None, max_length), dtype=tf.int32)       # X2: input sequence
             ),
-            tf.TensorSpec(shape=(None, vocab_size), dtype=tf.float32)      # y: output word
+            tf.TensorSpec(shape=(None, vocab_size), dtype=tf.float32)         # y: output word
         )
         
         train_dataset = tf.data.Dataset.from_generator(
